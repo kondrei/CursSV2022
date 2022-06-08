@@ -20,6 +20,7 @@ const Player = (props) => {
       >
         <div className="player-card-header">
           <h4>{props.opponent ? "Opponent" : "You"}</h4>
+          <span><strong>Moves: </strong>{props.moves}</span>
           <div className="player-tokens-left">
             <div className="player-token-count">X{props.nodesToPlace}</div>
             <svg
@@ -56,9 +57,8 @@ const Player = (props) => {
           >
             {[...Array(props.capturedNodes)].map((_, index) => (
               <image
-                key={`node-to-place-${
-                  props.opponent ? "opponent" : "current"
-                }-${index}`}
+                key={`node-to-place-${props.opponent ? "opponent" : "current"
+                  }-${index}`}
                 id={props.id}
                 width={35}
                 height={35}

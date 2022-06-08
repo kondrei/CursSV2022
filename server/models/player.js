@@ -7,6 +7,7 @@ class Player {
     this.board = board;
     this.isFirst = isFirst;
     this.selectedNode = null;
+    this.moves = 0;
   }
 
   changeAction(newAction) {
@@ -22,7 +23,8 @@ class Player {
       nodesToPlace: this.nodesLeftToPlace,
       error: this.error,
       capturedNodes: this.capturedNodes(),
-      isFirst: this.isFirst
+      isFirst: this.isFirst,
+      moves: this.moves
     };
 
     return json;
@@ -32,6 +34,7 @@ class Player {
 
   placedNode() {
     this.nodesLeftToPlace--;
+    this.moves++;
   }
 
   setError(newError) {
