@@ -7,7 +7,7 @@ import Game from "./models/game.js";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
-const port = 3000;
+const port = 3001;
 const server = http.createServer(app);
 const io = new Server(server);
 

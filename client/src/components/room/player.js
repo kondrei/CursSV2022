@@ -21,6 +21,7 @@ const Player = (props) => {
         <div className="player-card-header">
           <h4>{props.opponent ? "Opponent" : "You"}</h4>
           <span><strong>Moves: </strong>{props.moves}</span>
+          <span><strong>Mills: </strong>{props.mills}</span>
           <div className="player-tokens-left">
             <div className="player-token-count">X{props.nodesToPlace}</div>
             <svg
