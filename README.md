@@ -1,7 +1,9 @@
 # Mill Game
 
 ## App updates
-1. Count players move
+1. Count players moves
+2. Count players mills
+3. Starting server at 3001 port to resolve conflict
 
 ### Install & run
 
