@@ -305,3 +305,7 @@ button:active {
   border: none;
   width: 90%;
 }
+
+.score {
+  margin: 10px;
+}

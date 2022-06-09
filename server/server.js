@@ -6,6 +6,7 @@ import Game from "./models/game.js";
 
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+import Score from "./score.js";
 
 const port = 3001;
 const server = http.createServer(app);
@@ -106,5 +107,10 @@ io.on("connection", (socket) => {
         message: "The other player left. Please leave the room...",
       },
     });
+  });
+
+  socket.on("get-score", () => {
+    let score = new Score('score.json');
+    console.log(score.countScore());
   });
 });
