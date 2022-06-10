@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Score from "../room/score";
+
 
 const CreateRoomBtn = ({ socket }) => {
   const [roomName, setRoomName] = useState("");
@@ -38,7 +38,7 @@ const CreateRoomBtn = ({ socket }) => {
         </div>
         <button onClick={createRoom}>Create</button>
       </div>
-      <Score />
+      
       {error ? <p className="error">{error}</p> : null}
     </>
   );

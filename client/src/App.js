@@ -6,6 +6,7 @@ import Room from "./components/room/room";
 function App() {
   const [connectedSocket, setConnectedSocket] = useState();
   const [data, setData] = useState();
+  const [score, setScore] = useState();
 
   useEffect(() => {
     const socket = io();
@@ -17,6 +18,11 @@ function App() {
     socket.on("data", (receivedData) => {
       setData(receivedData);
     });
+
+    socket.on('send-score', (score) => {
+      setScore(score);
+    });
+
   }, []);
 
   const content = () => {
@@ -30,6 +36,7 @@ function App() {
           socket={connectedSocket}
           rooms={data.availableRooms}
           socketName={data.socketName}
+          score={score}
         />
       );
     }

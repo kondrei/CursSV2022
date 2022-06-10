@@ -1,7 +1,7 @@
 import CreateRoomBtn from "./create_room_btn";
 import RoomRow from "./room_row";
-
-const Menu = ({ socket, rooms, socketName }) => {
+import Score from "../room/score";
+const Menu = ({ socket, rooms, socketName, score }) => {
   return (
     <div className="menu">
       <div className="card mt15 p15">Welcome, {socketName}</div>
@@ -12,6 +12,7 @@ const Menu = ({ socket, rooms, socketName }) => {
             <RoomRow key={room.name} socket={socket} name={room} />
           ))}
           <CreateRoomBtn socket={socket} />
+          <Score socket={socket} score={score} />
         </div>
       </div>
     </div>

@@ -109,8 +109,12 @@ io.on("connection", (socket) => {
     });
   });
 
+  const emitScore = (score) => {
+    socket.emit("send-score", score);
+  }
+
   socket.on("get-score", () => {
     let score = new Score('score.json');
-    console.log(score.countScore());
+    emitScore(score.countScore());
   });
 });
