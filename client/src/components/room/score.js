@@ -6,14 +6,6 @@ const Score = ({ socket, score }) => {
         socket.emit("get-score", "get score");
         setShow('block')
     }
-    let output = ''
-    if (score) {
-
-        output = Object.keys(score).forEach(key => {
-            <div>aaa {key}</div>
-            console.log(key, score[key])
-        })
-    }
     return (
         <div className="score">
             <div className="background"
@@ -21,10 +13,26 @@ const Score = ({ socket, score }) => {
                 onClick={() => setShow('none')}
             >
                 <div className="content">
-                    {score && output}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Wins</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {score && Object.keys(score).map((key, index) =>
+                                <tr key={index}>
+                                    <td> {key}</td>
+                                    <td>{score[key]}</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                    <p className='close'>Click to close</p>
                 </div>
             </div>
-            <button onClick={getScore} >Score!</button>
+            <button onClick={getScore}>Hall of Fame</button>
         </div>
     )
 }

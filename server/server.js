@@ -117,4 +117,9 @@ io.on("connection", (socket) => {
     let score = new Score('score.json');
     emitScore(score.countScore());
   });
+
+  socket.on("add-name", (name) => {
+    const score = new Score('score.json');
+    score.addName(name);
+  })
 });

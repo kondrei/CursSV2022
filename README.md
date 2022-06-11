@@ -4,6 +4,7 @@
 1. Count players moves
 2. Count players mills
 3. Starting server at 3001 port to resolve conflict
+4. Adding the Hall of Fame! After a player wins the game, he can enter his name and it will be saved on the server in a file
 
 ### Install & run
 
