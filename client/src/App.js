@@ -29,7 +29,7 @@ function App() {
     if (!(connectedSocket && data)) return null;
 
     const { room } = data;
-
+    console.log(data)
     if (room === "menu") {
       return (
         <Menu

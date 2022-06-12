@@ -49,6 +49,28 @@
   align-items: center;
 }
 
+@media only screen and (max-width: 1300px) {
+  container {
+    max-width: none;
+  }
+  .grid {
+    flex-direction: column;
+    
+  }
+  .room {
+    transform: scale(0.8);
+
+  }
+  .overlay {
+    height: 540px;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    margin: 5px;
+  }
+}
+
 @keyframes changePlace {
   0% {
     transform: translateY(0%);
