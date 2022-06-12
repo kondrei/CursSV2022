@@ -34,7 +34,7 @@ const Leave = (props) => {
     <div className="card p15">
       {props.message}
       {props.message.search('won') > 0 && enterName()}
-      {nameSend && <div>Your name was addet to the Hall of Fame!</div>}
+      {nameSend && <div>Congratulations! Your name was added to the Hall of Fame!</div>}
       <button className="mt20" onClick={leaveRoom}>
         Leave Room!
       </button>
